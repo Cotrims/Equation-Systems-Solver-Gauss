@@ -1,24 +1,46 @@
 import java.util.StringTokenizer;
 import java.io.*;
 
-public class Programa {
-    public static void main(String[] args) {
-        int[][] matriz;
+public class Programa
+{
+	public static void main(String[] args)
+	{
+		int [][]matriz;
 
-        try {
-            BufferedReader arquivo = new BufferedReader(new FileReader("gauss.txt"));
+		try
+		{
+			for(byte i = 0; i < 75; i++)
+				System.out.print("=");
 
-            int qtdEquacoes = Integer.parseInt(arquivo.readLine());
-            matriz = new int[qtdEquacoes][qtdEquacoes + 1];
+			System.out.println("");
 
-            for (int i = 0; i < qtdEquacoes; i++) {
-                StringTokenizer quebrador = new StringTokenizer(arquivo.readLine());
+		    BufferedReader arquivo = new BufferedReader (
+		                             new FileReader (
+		                             "teste.txt"));
 
-                for (int j = 0; quebrador.hasMoreTokens(); j++)
-                    matriz[i][j] = Integer.parseInt(quebrador.nextToken());
+		    int qtdEquacoes = Integer.parseInt (arquivo.readLine());
+		    matriz = new int[qtdEquacoes][qtdEquacoes + 1];
+
+			for (int i=0; i<qtdEquacoes; i++)
+			{
+				StringTokenizer quebrador = new StringTokenizer (arquivo.readLine());
+
+	            for(int j = 0; quebrador.hasMoreTokens(); j++)
+					 matriz[i][j] = Integer.parseInt(quebrador.nextToken());
             }
-        } catch (Exception erro) {
-            // ...
-        }
-    }
+
+		    for(int i = 0; i < qtdEquacoes; i++)
+		    {
+				for(int j = 0; j < qtdEquacoes + 1; j++)
+				{
+					System.out.print(" " + matriz[i][j]);
+				}
+				System.out.println("");
+			}
+		 }
+		 catch (Exception erro)
+		 {
+				//...
+		 }
+	}
 }
