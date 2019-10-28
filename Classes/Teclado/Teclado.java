@@ -4,7 +4,7 @@
 
 import java.io.*;
 
-public class Teclado
+public class Teclado 
 {
     private static BufferedReader teclado =
                    new BufferedReader (
