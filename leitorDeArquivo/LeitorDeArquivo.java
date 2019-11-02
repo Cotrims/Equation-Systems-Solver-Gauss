@@ -50,6 +50,22 @@ public class LeitorDeArquivo
 		return ret;
 	}
 
+	public String toString()
+	{
+		return this.arquivo.toString();
+	}
+
+	public int hashCode()
+	{
+		return this.arquivo.hashCode();
+	}
+
+
+	/*equals
+	compareto
+	clone
+	construtor de clone
+	HashCide*/
 }
 
 
