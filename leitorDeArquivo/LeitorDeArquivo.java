@@ -5,14 +5,22 @@ import java.io.*;
 public class LeitorDeArquivo
 {
 	private BufferedReader arquivo;
+	private dim;//dimensÃµes da matriz
 
 	public LeitorDeArquivo(String arq) throws Exception
 	{
 		if(arq.equals("") || arq == null)
-			throw new Exception("Arquivo inválido");
+			throw new Exception("Arquivo invï¿½lido");
 
 		this.arquivo = new BufferedReader( new FileReader(arq));
 	}
+	public int getDim()
+	{
+		return dim;
+
+
+	}
+	this.getMatriz[0][0];
 
 	public double[][] getMatriz() throws Exception
 	{
@@ -21,7 +29,7 @@ public class LeitorDeArquivo
 		int dim = Integer.parseInt(getLinha());
 		ret = new double[dim][dim + 1];
 
-		for (int i=0; i<dim; i++)
+		for (int i=1; i<dim; i++)
 		{
 			StringTokenizer quebrador = new StringTokenizer (getLinha());
 
@@ -60,10 +68,12 @@ public class LeitorDeArquivo
 		return this.arquivo.hashCode();
 	}
 
-	public boolean equals(Object obj)
-	{
-		return this.arquivo.equals(obj);
-	}
+
+	/*equals
+	compareto
+	clone
+	construtor de clone
+	HashCide*/
 }
 
 
