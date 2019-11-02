@@ -12,13 +12,12 @@ public class Programa
 
 		try
 		{
-			
+
 			System.out.println("=======================================================");
-			System.out.println("              Bem-vindo || MÃ©todo de Gauss             ");
+			System.out.println("              Bem-vindo || Método de Gauss             ");
 			System.out.println("=======================================================");
-			System.out.println("Digite o nome do arquivo (exemplo.txt): ");
+			System.out.print("Digite o nome do arquivo (exemplo.txt): ");
 			String nomeArq = Teclado.getUmString();
-			System.out.println(nomeArq);
 			LeitorDeArquivo leitor = new LeitorDeArquivo("gauss.txt");
 			matriz = leitor.getMatriz();
 
