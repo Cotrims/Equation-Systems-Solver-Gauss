@@ -60,12 +60,10 @@ public class LeitorDeArquivo
 		return this.arquivo.hashCode();
 	}
 
-
-	/*equals
-	compareto
-	clone
-	construtor de clone
-	HashCide*/
+	public boolean equals(Object obj)
+	{
+		return this.arquivo.equals(obj);
+	}
 }
 
 
