@@ -1,0 +1,29 @@
+public boolean isColunaComZero(double[] col, int lin) throws Exception 
+{
+	if(col == null)
+		throw new Exception("coluna para validar inexistente");
+
+	for(int i = 0; i < col.length; i++)
+	{
+		if(i == lin)
+			i++;
+				
+		
+		if(col[i] != 0)
+			return false;
+	}
+
+	return true;
+}
+	
+public boolean isDPComZero(double[][] matriz) throws Exception 
+{
+	if(col == null)
+		throw new Exception("matriz para validar inexistente");
+																 
+	for(int i = 0; i < matriz[0].length; i++) //o matriz[0].length é pra ser o 3 se der 4 coloca um --
+		if(matriz[i][i] == 0)
+			return false;
+		
+	return true;
+}
