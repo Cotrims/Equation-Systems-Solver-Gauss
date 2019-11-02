@@ -1,10 +1,10 @@
 //import java.io.BufferedReader;
 //import java.io.InputStreamReader;
 //import java.io.IOException;
-
+package teclado;
 import java.io.*;
 
-public class Teclado 
+public class Teclado
 {
     private static BufferedReader teclado =
                    new BufferedReader (
@@ -42,7 +42,7 @@ public class Teclado
 
         return ret;
     }
- 
+
     public static short getUmShort () throws Exception
     {
         short ret=(short)0;
