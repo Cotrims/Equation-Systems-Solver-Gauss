@@ -55,7 +55,7 @@ public class Matriz
         return this.col;
     }
 
-    /*public double[] Escalona() 
+    public double[] Escalona() 
     { 
         String arq; 
         
@@ -73,7 +73,7 @@ public class Matriz
                 }
             }
         }
-    }*/
+    }
 
     public boolean isColunaComZero(double[] col, int lin) throws Exception 
     {
