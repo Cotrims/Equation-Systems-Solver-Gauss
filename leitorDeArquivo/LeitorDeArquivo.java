@@ -57,6 +57,11 @@ public class LeitorDeArquivo
 	{
 		return this.arquivo.hashCode();
 	}
+
+	public boolean equals(Object obj)
+	{
+		return this.arquivo.equals(obj);
+	}
 }
 
 
