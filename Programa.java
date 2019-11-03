@@ -8,15 +8,37 @@ public class Programa
 	{
 		try
 		{
-			/*
-			System.out.println("=======================================================");
+			/*System.out.println("=======================================================");
 			System.out.println("              Bem-vindo || Método de Gauss             ");
 			System.out.println("=======================================================");
 			System.out.print("Digite o nome do arquivo (exemplo.txt): ");
 			String nomeArq = Teclado.getUmString();
-			
-			LeitorDeArquivo leitor = new LeitorDeArquivo("gauss.txt");
-			matriz = leitor.getMatriz();
+
+			LeitorDeArquivo leitor = new LeitorDeArquivo(nomeArq);
+			Matriz mat = new Matriz(leitor.getMatriz());
+			double[][] matriz = mat.getMatriz();
+
+			System.out.println("");
+			System.out.println("Sua matriz eh a seguinte:");
+			System.out.println("");
+			System.out.println("   /");
+
+			for(int i = 0; i < mat.getLin();i ++)
+			{
+				System.out.print("   | ");
+
+				for(int j = 0; j < mat.getCol(); j++)
+				{
+					if(j < mat.getCol()-1)
+						System.out.print(matriz[i][j] + "" + (char)(j + 97) + ' ');
+					else
+						System.out.print(" = " + matriz[i][j]);
+				}
+				System.out.println("");
+			}
+
+			System.out.println("   \\");
+			System.out.println("");
 			*/
 
 			double[][] matriz = new double[3][4];
@@ -44,18 +66,19 @@ public class Programa
 				mat.tornarZero(i);
 			}
 
-			matriz = mat.getMatriz();
-
-			//Na tablela ascii a vale 97 ent eu comecei com a
+			System.out.println("Resultados:");
+			System.out.println("");
 
 		    for(int i = 0; i < matriz.length; i++)
 		    {
-				System.out.println(((char)i + 96) + " vale: " + matriz[i][matriz[0].length]);
+				System.out.println("   " + (char)(i + 97) + " vale: " + matriz[i][matriz[0].length-1]);
 			}
+
+			System.out.println("");
 		 }
 		 catch (Exception erro)
 		 {
-				//...
+				System.out.println(erro.getMessage());
 		 }
 	}
 }

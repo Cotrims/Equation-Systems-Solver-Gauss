@@ -75,8 +75,6 @@ public class Matriz
         }
     }*/
 
-    //TA DANDO UNS ERROS MAS EU ARRUMO DPS
-
     public boolean isColunaComZero(double[] col, int lin) throws Exception 
     {
         if (col == null)
@@ -85,6 +83,9 @@ public class Matriz
         for (int i = 0; i < col.length; i++) {
             if (i == lin)
                 i++;
+
+            if(i == col.length)
+                return true;
 
             if (col[i] != 0)
                 return false;
@@ -132,12 +133,14 @@ public class Matriz
             col[i] = matriz[i][coluna];
 
         double elem = 0;
-         
-        while(!isColunaComZero(col, coluna))
-            for(int i = 0; i < this.lin; i++)
+ 
+            for(int i = 0; !isColunaComZero(col, coluna); i++)
             {
                 if(i == coluna)
                     i++;
+
+                if(i == col.length)
+                    break;
 
                 if(col[i] != 0)
                 {
