@@ -4,19 +4,19 @@ package matriz;
 //Eu coloquei linhas e colunas pq a dimensao da matriz é simpre linha x linha + 1
 // \--E coloquei aqui pq faz mais sentido ser atributo de matriz
 
-public class Matriz 
+public class Matriz
 {
     private double[][] matriz;
     private int lin, col;
 
-    public Matriz(double[][] matriz) throws Exception 
+    public Matriz(double[][] matriz) throws Exception
     {
         setMatriz(matriz);
         setLin(matriz.length);
         setCol(matriz[0].length);
     }
 
-    public void setMatriz(double[][] matriz) throws Exception 
+    public void setMatriz(double[][] matriz) throws Exception
     {
         if (matriz == null)
             throw new Exception("matriz inválida");
@@ -24,7 +24,7 @@ public class Matriz
         this.matriz = matriz;
     }
 
-    public void setLin(int lin) throws Exception 
+    public void setLin(int lin) throws Exception
     {
         if (lin <= 0)
             throw new Exception("Linha inválida");
@@ -32,7 +32,7 @@ public class Matriz
         this.lin = lin;
     }
 
-    public void setCol(int col) throws Exception 
+    public void setCol(int col) throws Exception
     {
         if (col <= 0)
             throw new Exception("Coluna inválida");
@@ -40,42 +40,44 @@ public class Matriz
         this.col = col;
     }
 
-    public double[][] getMatriz() 
+    public double[][] getMatriz()
     {
         return this.matriz;
     }
 
-    public int getLin() 
+    public int getLin()
     {
         return this.lin;
     }
 
-    public int getCol() 
+    public int getCol()
     {
         return this.col;
     }
 
-    public double[] Escalona() 
-    { 
-        String arq; 
-        
-        for(int linha = 0;linha<lin;linha++) 
-        { 
-            int coluna = 0;// coluna sempre será 0, pois é ela que determina o resto do escalonamento 
+    public double[] Escalona()
+    {
+        String arq;
+        double[][] valores;
+
+        for(int linha = 0;linha<lin;linha++)
+        {
+            int coluna = 0;// coluna sempre será 0, pois é ela que determina o resto do escalonamento
             int dimensoes = lin;
-        
-            if(matriz[linha][coluna] > matriz[dimensoes - linha][coluna]) 
+
+            if(matriz[linha][coluna] > matriz[dimensoes - linha][coluna])
             {
-                if(matriz[linha][coluna] %matriz[dimensoes - linha][coluna]) 
-                { 
-                    double divisor = matriz[linha][coluna]/matriz[dimensoes - linha][coluna]; 
+                if(matriz[linha][coluna] % matriz[dimensoes - linha][coluna] == 0)
+                {
+                    double divisor = matriz[linha][coluna]/matriz[dimensoes - linha][coluna];
                     matriz[dimensoes - linha][coluna] = matriz[dimensoes - linha][coluna] - divisor;
                 }
             }
         }
+        return matriz;
     }
 
-    public boolean isColunaComZero(double[] col, int lin) throws Exception 
+    public boolean isColunaComZero(double[] col, int lin) throws Exception
     {
         if (col == null)
             throw new Exception("coluna para validar inexistente");
@@ -94,7 +96,7 @@ public class Matriz
         return true;
     }
 
-    public boolean isDPComZero(double[][] matriz) throws Exception 
+    public boolean isDPComZero(double[][] matriz) throws Exception
     {
         if (matriz == null)
             throw new Exception("matriz para validar inexistente");
@@ -133,7 +135,7 @@ public class Matriz
             col[i] = matriz[i][coluna];
 
         double elem = 0;
- 
+
             for(int i = 0; !isColunaComZero(col, coluna); i++)
             {
                 if(i == coluna)
@@ -145,7 +147,7 @@ public class Matriz
                 if(col[i] != 0)
                 {
                     elem = col[i];
-                    
+
                     for(int j = 0; j < this.col; j++)
                         matriz[i][j] += lin[j] * (-elem);
 
