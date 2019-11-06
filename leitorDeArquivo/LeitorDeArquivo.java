@@ -1,11 +1,19 @@
 package leitorDeArquivo;
 import java.util.StringTokenizer;
 import java.io.*;
-
+/**Classe que lê o arquivo da matriz
+ * @author Vinicius Cotrim 19040
+ * @author Manuela Benassi 19184
+ * @since 2019
+ */
 public class LeitorDeArquivo
 {
 	private BufferedReader arquivo;
-
+/**
+ * Lê os arquivo
+ * @param arq
+ * @throws Exception
+ */
 	public LeitorDeArquivo(String arq) throws Exception
 	{
 		if(arq.equals("") || arq == null)
