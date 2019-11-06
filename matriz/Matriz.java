@@ -83,7 +83,7 @@ public class Matriz implements Comparable<Matriz>, Cloneable
     {
         String ret = "";
 
-        for (int i = 0; i < getLin; i++)
+        for (int i = 0; i < getLin(); i++)
         {
             ret += '\n';
             for (int j = 0; j < matriz[0].length; j++)
@@ -115,7 +115,7 @@ public class Matriz implements Comparable<Matriz>, Cloneable
         if(this.col != mat.col)
             return false;
 
-        for (int i = 0; i < getLin; i++)
+        for (int i = 0; i < getLin(); i++)
             for (int j = 0; j < matriz[0].length; j++)
                 if(this.matriz[i][j] != mat.matriz[i][j])
                     return false;
@@ -135,7 +135,7 @@ public class Matriz implements Comparable<Matriz>, Cloneable
         ret = ret * PRIMO * new Integer(this.col);
         ret = ret * PRIMO * new Integer(this.lin);
 
-        for (int i = 0; i < getLin; i++)
+        for (int i = 0; i < getLin(); i++)
             for (int j = 0; j < matriz[0].length; j++)
                 ret = ret * PRIMO + new Double(this.matriz[i][j]).hashCode();
 

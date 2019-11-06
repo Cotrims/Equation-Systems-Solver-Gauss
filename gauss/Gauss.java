@@ -16,9 +16,7 @@ public class Gauss {
         if (col == null)
             throw new Exception("coluna para validar inexistente");
         if(lin < 0)
-        {
             throw new Exception("as linhas da matriz precisam ser valores positivos");
-        }
 
         for (int i = 0; i < col.length; i++) {
             if (i == lin)
@@ -37,7 +35,7 @@ public class Gauss {
      * 
      * @param matriz matriz a ser verificada
      * @return true se possuir 0, false se não possuir
-     * @throws Exception quando a matriz é nula
+     * @throws Exception quando a matriz passada pelo parâmetro é nula
      */
     public static boolean isDPComZero(double[][] matriz) throws Exception {
         if (matriz == null)
@@ -49,18 +47,18 @@ public class Gauss {
 
         return false;
     }
+
     /**Muda a ordem das linhas para tirar os zeros da diagonal principal
      * 
      * @param matriz matriz que deve tirar os 0 
-     * @return uma matriz de doubles sem 0 na matriz principal
+     * @return uma matriz de doubles com o mesmo conteúdo da matriz passaca como parâmetro mas sem 0 na diagonal principal 
      * @throws Exception quando a matriz é nula
      */
-
     public static double[][] retirarZeros(double[][] matriz) throws Exception  
     {
         if (matriz == null)
             throw new Exception("matriz para validar inexistente");
-        try{
+
             double[][] ret = new double[matriz.length][matriz[0].length];
 
         for (int i = 0; i < matriz.length; i++)
@@ -73,22 +71,21 @@ public class Gauss {
             ret[i] = ret[i + 1];
 
         ret[ret.length - 1] = aux; // A ultima recebe a primeira
-        }
-        catch(Exception e)
-        {}
+  
         return ret;
     }
     /**Torna um elemento da diagonal pricipal em 1, dividindo toda a linha pelo elemento a ser tonado 1
      * 
      * @param matriz matriz onde se encontram os valores para serem trabalhados
      * @param lin linha em que iremos implementar o 1
-     * @return
+     * @return retorna uma matriz de double com a linha (que foi passada como parâmetro)
+     * dividida pelas operações do método
      */
-    public static double[][] tornarUm(double[][] matriz, int lin) {
+    public static double[][] tornarUm(double[][] matriz, int lin) throws Exception
+     {
         if (matriz == null)
         throw new Exception("matriz para validar inexistente");
        
-        try{
         double[][] ret = new double[matriz.length][matriz[0].length];
 
         for (int i = 0; i < matriz.length; i++)
@@ -99,17 +96,15 @@ public class Gauss {
 
         for (int i = 0; i < ret[0].length; i++) // Divide toda a linha pelo divisor
             ret[lin][i] /= divisor;
-        }
-        catch(Exception e)
-        {}
+
         return ret;
     }
-/**
- * 
- * @param matriz
- * @param coluna
- * @return
- * @throws Exception
+/** Torna todos os elementos de uma colida de uma matriz 0,
+ *  com exceção do elemento da diagonal principal
+ * @param matriz A matriz para ter sua coluna alterada
+ * @param coluna Um int que indica o número da a coluna a ser trabalhada
+ * @return Retorna uma matriz com a coluna passada como parâmetro com zeros em todas as células exceto na diagonal principal
+ * @throws Exception O método que verifica se ainda há zeros na coluna lança exceção 
  */
     public static double[][] tornarZero(double[][] matriz, int coluna) throws Exception {
         double[][] ret = new double[matriz.length][matriz[0].length];
@@ -145,6 +140,13 @@ public class Gauss {
 
         return ret;
     }
+
+    /**Método para validar a matriz verificando por, igualdade de aquações em uma matriz 
+     * 
+     * @param matriz
+     * @return
+     * @throws Exception
+     */
 
     public static boolean valida(double[][] matriz) throws Exception
     {

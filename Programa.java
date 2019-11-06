@@ -5,7 +5,7 @@ import gauss.Gauss;
 
 public class Programa {
 	/*
-	 * javadocs validar/senaoehresolvivel
+	 * javadocs
 	 */
 	public static void main(String[] args) {
 		try {
@@ -57,6 +57,8 @@ public class Programa {
 				System.out.println("   \\");
 				System.out.println();
 
+				boolean valida = Gauss.valida(mat.getMatriz());
+
 				while (Gauss.isDPComZero(mat.getMatriz()))
 					mat.setMatriz(Gauss.retirarZeros(mat.getMatriz()));
 
@@ -68,8 +70,11 @@ public class Programa {
 				System.out.println("Resultados:");
 				System.out.println();
 
-				for (int i = 0; i < mat.getLin(); i++)
-					System.out.println("   " + (char) (i + 97) + " vale: " + mat.getMatriz()[i][mat.getLin()]);
+				if(valida)
+					for (int i = 0; i < mat.getLin(); i++)
+						System.out.println("   " + (char) (i + 97) + " vale: " + mat.getMatriz()[i][mat.getLin()]);
+				else
+				    System.out.println("   Esse sistema nao tem solucao!");
 
 				System.out.println();
 				System.out.println("Deseja calcular mais um sistema?");
