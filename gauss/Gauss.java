@@ -1,8 +1,9 @@
 package gauss;
-/** Classe singleton que resolve o escalonamento de matrizes
+/**A classe singleton Gauss resolve o escalonamento de matrizes, trabalhando
+ * sempre com métodos que representam cada parte do escalonamento
  * @author Vinicius Cotrim 19040
  * @author Manuela Benassi 19184
-*  @since 2019
+ *  @since 2019
  */
 public class Gauss {
     /**Verifica se a coluna da matriz possui zeros
@@ -32,7 +33,7 @@ public class Gauss {
         return true;
     }
     /**Verifica se a diagonal principal da matriz possui algum 0
-     * 
+     *
      * @param matriz matriz a ser verificada
      * @return true se possuir 0, false se não possuir
      * @throws Exception quando a matriz passada pelo parâmetro é nula
@@ -49,12 +50,12 @@ public class Gauss {
     }
 
     /**Muda a ordem das linhas para tirar os zeros da diagonal principal
-     * 
-     * @param matriz matriz que deve tirar os 0 
-     * @return uma matriz de doubles com o mesmo conteúdo da matriz passaca como parâmetro mas sem 0 na diagonal principal 
+     *
+     * @param matriz matriz que deve tirar os 0
+     * @return uma matriz de doubles com o mesmo conteúdo da matriz passaca como parâmetro mas sem 0 na diagonal principal
      * @throws Exception quando a matriz é nula
      */
-    public static double[][] retirarZeros(double[][] matriz) throws Exception  
+    public static double[][] retirarZeros(double[][] matriz) throws Exception
     {
         if (matriz == null)
             throw new Exception("matriz para validar inexistente");
@@ -71,11 +72,11 @@ public class Gauss {
             ret[i] = ret[i + 1];
 
         ret[ret.length - 1] = aux; // A ultima recebe a primeira
-  
+
         return ret;
     }
     /**Torna um elemento da diagonal pricipal em 1, dividindo toda a linha pelo elemento a ser tonado 1
-     * 
+     *
      * @param matriz matriz onde se encontram os valores para serem trabalhados
      * @param lin linha em que iremos implementar o 1
      * @return retorna uma matriz de double com a linha (que foi passada como parâmetro)
@@ -85,7 +86,7 @@ public class Gauss {
      {
         if (matriz == null)
         throw new Exception("matriz para validar inexistente");
-       
+
         double[][] ret = new double[matriz.length][matriz[0].length];
 
         for (int i = 0; i < matriz.length; i++)
@@ -104,7 +105,7 @@ public class Gauss {
  * @param matriz A matriz para ter sua coluna alterada
  * @param coluna Um int que indica o número da a coluna a ser trabalhada
  * @return Retorna uma matriz com a coluna passada como parâmetro com zeros em todas as células exceto na diagonal principal
- * @throws Exception O método que verifica se ainda há zeros na coluna lança exceção 
+ * @throws Exception O método que verifica se ainda há zeros na coluna lança exceção
  */
     public static double[][] tornarZero(double[][] matriz, int coluna) throws Exception {
         double[][] ret = new double[matriz.length][matriz[0].length];
@@ -141,18 +142,19 @@ public class Gauss {
         return ret;
     }
 
-    /**Método para validar a matriz verificando por, igualdade de aquações em uma matriz 
-     * 
-     * @param matriz
-     * @return
-     * @throws Exception
+    /**Método para validar a matriz verificando por, igualdade de aquações em uma matriz,
+     * validade em seu tamanho e pelas regras de divisão entre seus elementos
+     *
+     * @param matriz A matriz a ser validada
+     * @return Uma matriz totalmente validada
+     * @throws Exception Lança exceção caso a matriz passada como parâmetro seja nula
      */
 
     public static boolean valida(double[][] matriz) throws Exception
     {
         if(matriz == null)
         throw new Exception("Matriz nula para validar");
-        
+
         boolean validade = true;
 
         if(matriz[0].length - matriz.length != 1)

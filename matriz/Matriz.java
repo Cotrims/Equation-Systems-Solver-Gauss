@@ -1,5 +1,6 @@
 package matriz;
-/** Classe que preenche a matriz e da acesso seguro a ela
+/** Classe que representa a matriz e da acesso seguro a ela,
+ * contendo a matriz, sua quantidade de linhas e colunas
  * @author Vinicius Cotrim 19040
  * @author Manuela Benassi 19184
 *  @since 2019
@@ -19,8 +20,8 @@ public class Matriz implements Comparable<Matriz>, Cloneable
         setCol(matriz[0].length);
     }
 /** Dá a matriz da classe a matriz que o usuário pede
- * @param matrizuma matriz de doubles
- * @throws Exception caso a matriz seja nula
+ * @param matriz Uma matriz de doubles
+ * @throws Exception Caso a matriz passada como parâmetro seja nula
  */
     public void setMatriz(double[][] matriz) throws Exception
     {
@@ -30,7 +31,7 @@ public class Matriz implements Comparable<Matriz>, Cloneable
         this.matriz = matriz;
     }
 /**Dá a linha o valor que o usuário quer
- * 
+ *
  * @param lin inteiro que corresponde a linha
  * @throws Exception caso a linha seja menor que 0
  */
@@ -42,7 +43,7 @@ public class Matriz implements Comparable<Matriz>, Cloneable
         this.lin = lin;
     }
 /**Dá a coluna o valor que o usuário quer
- *  
+ *
  * @param col int que corresponde a coluna
  * @throws Exception se coluna for negativa
  */
@@ -61,7 +62,7 @@ public class Matriz implements Comparable<Matriz>, Cloneable
         return this.matriz;
     }
 /**pega a quantidade de linhas
- * 
+ *
  * @return int quantidade de linhas
  */
     public int getLin()
@@ -107,7 +108,7 @@ public class Matriz implements Comparable<Matriz>, Cloneable
         if (this.getClass()!=obj.getClass())
             return false;
 
-        Matriz mat = (Matriz)obj; 
+        Matriz mat = (Matriz)obj;
 
         if(this.lin != mat.lin)
             return false;
@@ -123,7 +124,7 @@ public class Matriz implements Comparable<Matriz>, Cloneable
         return true;
     }
     /**Faz o código da matriz
-     * 
+     *
      * @return um inteiro que representa o codigo
      */
 
@@ -145,24 +146,32 @@ public class Matriz implements Comparable<Matriz>, Cloneable
         return ret;
     }
 /**compara a matriz com outra matriz
- * @param mat uma matriz que vai ser comparada
- * @return 1 se for maior, -1 se for menor e 0 se for igual
- * 
+ * @param mat Uma matriz que vai ser comparada
+ * @return Um inteiro seguindo a seguinte ordem:
+ 	<ol>
+    	<li>
+        	Um inteiro i negativo é retornado quando
+             </li>
+             <li>
+              Um inteiro i positivo é retornado quando o nome
+              procurado foi encontrado na posição i-1.
+             </li>
+            </ol>
  */
     public int compareTo(Matriz mat)
     {
         if(this.col*this.lin > mat.col*mat.lin)
             return 1;
-        
+
         if(this.col*this.lin < mat.col*mat.lin)
             return -1;
 
         return 0;
     }
 /**
- * Construtor de cópia de matriz 
- * @param modelo um objeto da classe matriz que sera clonado
- * @throws Exception se o modelo não existir
+ * Construtor de cópia de matriz
+ * @param Modelo um objeto da classe matriz que será clonado
+ * @throws Exception Se o modelo passado como parâmetro não existir
  */
     public Matriz(Matriz modelo) throws Exception
     {
@@ -174,7 +183,7 @@ public class Matriz implements Comparable<Matriz>, Cloneable
         this.matriz = modelo.matriz;
     }
 /**Clona a matriz dessa classe
- * @return uma matriz
+ * @return Uma nova matriz que é clona de this
  */
     public Object clone()
     {
