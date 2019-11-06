@@ -6,9 +6,9 @@ package gauss;
  */
 public class Gauss {
     /**Verifica se a coluna da matriz possui zeros
-     * Para tanto, recebe uma matriz coluna e uma qt int de linhas
+     * Para tanto, recebe um vetor coluna e uma linha
      * @param col coluna que verifica se tem 0
-     * @param lin quantas linhas essa coluna tem
+     * @param lin linha correspondente ao elemento da diagonal principal
      * @return true se a coluna possuir zeros, e false se não possuir
      * @throws Exception se a coluna for nula ou o valor da linha menor que 0
      */
@@ -35,7 +35,7 @@ public class Gauss {
     }
     /**Verifica se a diagonal principal da matriz possui algum 0
      * 
-     * @param matriz
+     * @param matriz matriz a ser verificada
      * @return true se possuir 0, false se não possuir
      * @throws Exception quando a matriz é nula
      */
@@ -52,7 +52,7 @@ public class Gauss {
     /**Muda a ordem das linhas para tirar os zeros da diagonal principal
      * 
      * @param matriz matriz que deve tirar os 0 
-     * @return uma matriz de doubles sem 0 na maatriz principal
+     * @return uma matriz de doubles sem 0 na matriz principal
      * @throws Exception quando a matriz é nula
      */
 
@@ -78,10 +78,10 @@ public class Gauss {
         {}
         return ret;
     }
-    /**
+    /**Torna um elemento da diagonal pricipal em 1, dividindo toda a linha pelo elemento a ser tonado 1
      * 
-     * @param matriz
-     * @param lin
+     * @param matriz matriz onde se encontram os valores para serem trabalhados
+     * @param lin linha em que iremos implementar o 1
      * @return
      */
     public static double[][] tornarUm(double[][] matriz, int lin) {
