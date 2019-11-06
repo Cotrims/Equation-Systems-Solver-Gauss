@@ -1,11 +1,11 @@
 import java.util.StringTokenizer;
 import java.io.*;
 
-public class Programa 
+public class Programa
 {
 	public static void main(String[] args)
 	{
-		int [][]matriz;
+		double [][]matriz;
 
 		try
 		{
@@ -16,17 +16,17 @@ public class Programa
 
 		    BufferedReader arquivo = new BufferedReader (
 		                             new FileReader (
-		                             "teste.txt"));
+		                             "gauss.txt"));
 
-		    int qtdEquacoes = Integer.parseInt (arquivo.readLine());
-		    matriz = new int[qtdEquacoes][qtdEquacoes + 1];
+		    int qtdEquacoes = Integer.parseInt(arquivo.readLine());
+		    matriz = new double[qtdEquacoes][qtdEquacoes + 1];
 
 			for (int i=0; i<qtdEquacoes; i++)
 			{
-				StringTokenizer quebrador = new StringTokenizer (arquivo.readLine());
+				StringTokenizer quebrador = new StringTokenizer (arquivo.readLine());//separa os conjuntos de numero por linha
 
 	            for(int j = 0; quebrador.hasMoreTokens(); j++)
-					 matriz[i][j] = Integer.parseInt(quebrador.nextToken());
+					 matriz[i][j] = Double.parseDouble(quebrador.nextToken());//pega o digito após o espaço
             }
 
 		    for(int i = 0; i < qtdEquacoes; i++)
