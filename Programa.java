@@ -57,7 +57,7 @@ public class Programa {
 				System.out.println("   \\");
 				System.out.println();
 
-				while (Gauss.isDPComZero(mat.getMatriz())) // Retira todos os zeros da digonal principal
+				while (Gauss.isDPComZero(mat.getMatriz()))
 					mat.setMatriz(Gauss.retirarZeros(mat.getMatriz()));
 
 				for (int i = 0; i < mat.getLin(); i++) {
@@ -84,7 +84,7 @@ public class Programa {
 							throw new Exception();
 						break;
 					} catch (Exception err) {
-						System.out.print("Opção inválida, digite novamente: ");
+						System.out.print("Opcaoo invalida, digite novamente: ");
 						continue;
 					}
 				}
@@ -95,9 +95,7 @@ public class Programa {
 					break;
 			}
 
-			System.out.println("=======================================================");
 			System.out.println("==========================Adeus!=======================");
-			System.out.println("=======================================================");
 			System.exit(1);
 		} catch (Exception err) {
 			System.out.println(err.getMessage());

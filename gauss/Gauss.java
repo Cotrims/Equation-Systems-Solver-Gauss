@@ -97,4 +97,19 @@ public class Gauss {
 
         return ret;
     }
+
+    public static boolean valida(double[][] matriz) throws Exception
+    {
+        if(matriz == null)
+            throw new Exception("Matriz nula para validar");
+
+        for(int i = 0; i < matriz.length; i++)
+            for(int j = 0; j < matriz[0].length; j++)
+                if(true)
+                {
+                    
+                }
+
+        return true;
+    }
 }
