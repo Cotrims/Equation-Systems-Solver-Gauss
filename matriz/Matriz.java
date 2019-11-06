@@ -97,6 +97,9 @@ public class Matriz implements Comparable<Matriz>, Cloneable
         int ret = 1;
         final int PRIMO = 3;
 
+        ret = ret * PRIMO * new Integer(this.col);
+        ret = ret * PRIMO * new Integer(this.lin);
+
         for (int i = 0; i < matriz.length; i++)
             for (int j = 0; j < matriz[0].length; j++)
                 ret = ret * PRIMO + new Double(this.matriz[i][j]).hashCode();
