@@ -14,16 +14,16 @@ public class LeitorDeArquivo
 		this.arquivo = new BufferedReader( new FileReader(arq));
 	}
 
-	public double[][] getMatriz() throws Exception
+	public double[][] getUmaMatriz() throws Exception
 	{
-		double[][] ret;
+		double[][] ret = null;
 
-		int dim = Integer.parseInt(getLinha());
+		int dim = Integer.parseInt(getUmaLinha());
 		ret = new double[dim][dim + 1];
 
 		for (int i=0; i<dim; i++)
 		{
-			StringTokenizer quebrador = new StringTokenizer (getLinha());
+			StringTokenizer quebrador = new StringTokenizer (getUmaLinha());
 
 			for(int j = 0; quebrador.hasMoreTokens(); j++)
 				ret[i][j] = Double.parseDouble(quebrador.nextToken());
@@ -32,7 +32,7 @@ public class LeitorDeArquivo
         return ret;
 	}
 
-	public String getLinha() throws Exception
+	public String getUmaLinha() throws Exception
 	{
 		String ret = "";
 

@@ -1,10 +1,6 @@
 package matriz;
-/* DEUS ABENÇOE SUA CLASSE AMEM */
 
-//Eu coloquei linhas e colunas pq a dimensao da matriz é simpre linha x linha + 1
-// \--E coloquei aqui pq faz mais sentido ser atributo de matriz
-
-public class Matriz
+public class Matriz implements Comparable<Matriz>, Cloneable
 {
     private double[][] matriz;
     private int lin, col;
@@ -55,104 +51,93 @@ public class Matriz
         return this.col;
     }
 
-    public double[] Escalona()
+    public String toString()
     {
-        String arq;
-        double[][] valores;
+        String ret = "";
 
-        for(int linha = 0;linha<lin;linha++)
+        for (int i = 0; i < matriz.length; i++)
         {
-            int coluna = 0;// coluna sempre será 0, pois é ela que determina o resto do escalonamento
-            int dimensoes = lin;
-
-            if(matriz[linha][coluna] > matriz[dimensoes - linha][coluna])
-            {
-                if(matriz[linha][coluna] % matriz[dimensoes - linha][coluna] == 0)
-                {
-                    double divisor = matriz[linha][coluna]/matriz[dimensoes - linha][coluna];
-                    matriz[dimensoes - linha][coluna] = matriz[dimensoes - linha][coluna] - divisor;
-                }
-            }
+            ret += '\n';
+            for (int j = 0; j < matriz[0].length; j++)
+                ret += matriz[i][j] + " ";
         }
-        return matriz;
+
+        return ret;
     }
 
-    public boolean isColunaComZero(double[] col, int lin) throws Exception
+    public boolean equals(Object obj)
     {
-        if (col == null)
-            throw new Exception("coluna para validar inexistente");
+        if (this==obj)
+            return true;
 
-        for (int i = 0; i < col.length; i++) {
-            if (i == lin)
-                i++;
+        if (obj==null)
+            return false;
 
-            if(i == col.length)
-                return true;
+        if (this.getClass()!=obj.getClass())
+            return false;
 
-            if (col[i] != 0)
-                return false;
-        }
+        Matriz mat = (Matriz)obj; 
+
+        if(this.lin != mat.lin)
+            return false;
+
+        if(this.col != mat.col)
+            return false;
+
+        for (int i = 0; i < matriz.length; i++)
+            for (int j = 0; j < matriz[0].length; j++)
+                if(this.matriz[i][j] != mat.matriz[i][j])
+                    return false;
 
         return true;
     }
 
-    public boolean isDPComZero(double[][] matriz) throws Exception
+    public int hashcode()
     {
-        if (matriz == null)
-            throw new Exception("matriz para validar inexistente");
+        int ret = 1;
+        final int PRIMO = 3;
 
-        for (int i = 0; i < this.lin; i++)
-            if (matriz[i][i] == 0)
-                return true;
+        for (int i = 0; i < matriz.length; i++)
+            for (int j = 0; j < matriz[0].length; j++)
+                ret = ret * PRIMO + new Double(this.matriz[i][j]).hashCode();
 
-        return false;
+        if(ret < 0)
+            ret = -ret;
+
+        return ret;
     }
 
-    public void retirarZeros() //Muda a ordem das linhas para tirar os zeros da DP
+    public int compareTo(Matriz mat)
     {
-        double[] aux = matriz[0]; //Guarda a primeira em uma auxiliar
+        if(this.col*this.lin > mat.col*mat.lin)
+            return 1;
+        
+        if(this.col*this.lin < mat.col*mat.lin)
+            return -1;
 
-        for(int i = 0; i < this.lin-1; i++) //A de baixo recebe a de cima
-            matriz[i] = matriz[i+1];
-
-        matriz[this.lin-1] = aux; //A ultima recebe a primeira
+        return 0;
     }
 
-    public void tornarUm(int lin) //Tona um o elemento da diagonal principal de uma linha
+    public Matriz(Matriz modelo) throws Exception
     {
-        double divisor = matriz[lin][lin]; //O divisor sera o elemento a ser tornado 1
+        if(modelo == null)
+            throw new Exception("Modelo ausente");
 
-        for(int i = 0; i < this.col; i++) //Divide toda a linha pelo divisor
-            this.matriz[lin][i] /= divisor;
+        this.col = modelo.col;
+        this.lin = modelo.lin;
+        this.matriz = modelo.matriz;
     }
 
-    public void tornarZero(int coluna) throws Exception
+    public Object clone()
     {
-        double[] lin = matriz[coluna].clone();
-        double[] col = new double[this.lin];
+        Matriz ret = null;
 
-        for(int i = 0; i < this.lin; i++)
-            col[i] = matriz[i][coluna];
-
-        double elem = 0;
-
-            for(int i = 0; !isColunaComZero(col, coluna); i++)
-            {
-                if(i == coluna)
-                    i++;
-
-                if(i == col.length)
-                    break;
-
-                if(col[i] != 0)
-                {
-                    elem = col[i];
-
-                    for(int j = 0; j < this.col; j++)
-                        matriz[i][j] += lin[j] * (-elem);
-
-                col[i] = 0;
-            }
+        try
+        {
+            ret = new Matriz(this);
         }
+        catch(Exception err)
+        {}
+        return ret;
     }
 }
