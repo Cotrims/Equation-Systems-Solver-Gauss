@@ -149,15 +149,32 @@ public class Gauss {
     public static boolean valida(double[][] matriz) throws Exception
     {
         if(matriz == null)
-            throw new Exception("Matriz nula para validar");
+        throw new Exception("Matriz nula para validar");
+        
+        boolean validade = true;
 
-        for(int i = 0; i < matriz.length; i++)
-            for(int j = 0; j < matriz[0].length; j++)
-                if(true)
-                {
-                    
-                }
+        if(matriz[0].length - matriz.length != 1)
+            validade = false;
 
-        return true;
+        for(int i = 0; i < matriz.length-1; i++)
+            for(int j = i+1; j < matriz.length; j++)
+                if(matriz[i] == matriz[j])
+                    validade = false;
+
+        double divisao;
+
+        for(int i = 0; i < matriz.length-1; i++)
+        {
+            divisao = matriz[i][0] / matriz[i+1][0];
+            for(int j = i+1; j < matriz.length; j++)
+            {
+                if(matriz[i][j] / matriz[i+1][j] == divisao)
+                    validade = false;
+                else
+                    validade = true;
+            }
+        }
+
+        return validade;
     }
 }
