@@ -104,7 +104,13 @@ public class Gauss {
         {}
         return ret;
     }
-
+/**
+ * 
+ * @param matriz
+ * @param coluna
+ * @return
+ * @throws Exception
+ */
     public static double[][] tornarZero(double[][] matriz, int coluna) throws Exception {
         double[][] ret = new double[matriz.length][matriz[0].length];
 
