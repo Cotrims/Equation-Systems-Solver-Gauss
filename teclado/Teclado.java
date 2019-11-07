@@ -11,7 +11,7 @@ import java.io.*;
  * @since 2019
  */
 public class Teclado {
-    private static BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+    protected static BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
 
     /**
      * Retorna uma String do teclado. Após a letura do teclado o valor lido é

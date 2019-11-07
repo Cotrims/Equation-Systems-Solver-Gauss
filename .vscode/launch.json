@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MainTeste",
+            "request": "launch",
+            "mainClass": "MainTeste",
+            "projectName": "EscalonamentodeMatriz_5297d1bf"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Programa",
             "request": "launch",
             "mainClass": "Programa"

@@ -16,7 +16,7 @@ public class LeitorDeArquivo {
 	 * Um tipo de BufferedReader que será instanciado como um leitor de aquivo de um
 	 * determinado arquivo.
 	 */
-	private BufferedReader arquivo;
+	protected BufferedReader arquivo;
 
 	/**
 	 * Constroi uma nova instância da classe LeitorDeArquivo. Passando então, para
@@ -35,7 +35,7 @@ public class LeitorDeArquivo {
 
 	/**
 	 * Lê o arquivo e retorna uma matriz de double. Para que a leitura ocorra sem
-	 * falhas o arquivo deve estar formatado em: 1ª linha é a dimensãos da matriz;
+	 * falhas o arquivo deve estar formatado em: 1ª linha é a dimensão da matriz;
 	 * 2ª e demais linhas o conteudo da matriz.
 	 * 
 	 * @return Uma matriz preenchida pelo arquivo

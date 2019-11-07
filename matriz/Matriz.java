@@ -12,17 +12,17 @@ public class Matriz implements Comparable<Matriz>, Cloneable {
     /**
      * Mantém armazenado a matriz que a classe representará
      */
-    private double[][] matriz;
+    protected double[][] matriz;
 
     /**
      * Mantém armazenado a quantidade de linhas que a matriz da classe possui.
      */
-    private int lin;
+    protected int lin;
 
     /**
      * Mantém armazenado a quantidade de colunas que a matriz da classe possui.
      */
-    private int col;
+    protected int col;
 
     /**
      * Constroi uma nova instância da classe Matriz. Passando como parâmetro a
@@ -59,7 +59,7 @@ public class Matriz implements Comparable<Matriz>, Cloneable {
      * @throws Exception Caso a linha seja menor ou igual que 0.
      */
     public void setLin(int lin) throws Exception {
-        if (lin <= 0)
+        if (lin <= 0 || lin > matriz.length)
             throw new Exception("Linha inválida");
 
         this.lin = lin;
@@ -73,7 +73,7 @@ public class Matriz implements Comparable<Matriz>, Cloneable {
      * @throws Exception Caso a coluna seja menor ou igaul que 0.
      */
     public void setCol(int col) throws Exception {
-        if (col <= 0)
+        if (col <= 0 || col > matriz[0].length)
             throw new Exception("Coluna inválida");
 
         this.col = col;
