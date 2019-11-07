@@ -7,7 +7,7 @@ public class Programa {
 	public static void main(String[] args)
 	{
 		try {
-			//Exibição do menu para o usuário
+			//Exibicao do menu para o usuario
 			System.out.println("=======================================================");
 			System.out.println("              Bem-vindo || Metodo de Gauss             ");
 			System.out.println("=======================================================");
@@ -24,12 +24,12 @@ public class Programa {
 				}
 				catch (Exception err)
 				{
-					System.out.print("Arquivo nao encontrado, digite novamente: "); //Caso o arquivo não seja encontrado
-					continue; //Repete a inserção do nome do arquivo
+					System.out.print("Arquivo nao encontrado, digite novamente: "); //Caso o arquivo nao seja encontrado
+					continue; //Repete a inserido do nome do arquivo
 				}
 			}
 
-			for (int n = 1;true;n++) //Esse for executa o necessário para resolver um sistema n vezes
+			for (int n = 1;true;n++) //Esse for executa o necessario para resolver um sistema n vezes
 			{
 				System.out.println("=======================================================");
 
@@ -41,10 +41,10 @@ public class Programa {
 				catch (Exception err)
 				{
 					throw new Exception("Sem sistemas disponiveis no arquivo, fim do programa!");
-					//Caso não seja retornado nada, significa que acabou o arquivo ent
+					//Caso nao seja retornado nada, significa que acabou o arquivo
 				}
 
-				//Exibição da matriz lida
+				//Exibicao da matriz lida
 				System.out.println();
 				System.out.println("Seu " + n + "o sistema eh o seguinte:");
 				System.out.println();
@@ -68,11 +68,11 @@ public class Programa {
 				System.out.println("   \\");
 				System.out.println();
 
-				boolean valida = Gauss.valida(mat.getMatriz()); //Verifica se a matriz eh ou não eh válida
+				boolean valida = Gauss.valida(mat.getMatriz()); //Verifica se a matriz eh ou nao eh valida
 
 				//Resolve a matriz
 				while (Gauss.isDPComZero(mat.getMatriz())) //Caso tenha zeros
-					mat.setMatriz(Gauss.retirarZeros(mat.getMatriz())); //Retira os possíveis zeros da diagonal principal
+					mat.setMatriz(Gauss.retirarZeros(mat.getMatriz())); //Retira os possiveis zeros da diagonal principal
 
 				for (int i = 0; i < mat.getLin(); i++)
 				{
@@ -80,17 +80,17 @@ public class Programa {
 					mat.setMatriz(Gauss.tornarZero(mat.getMatriz(), i)); //Torna todos os demais elementos da coluna i em 0
 				}
 
-				//Exibição dos resultados
+				//Exibicao dos resultados
 				System.out.println("Resultados:");
 				System.out.println();
 
-				if(valida)//Caso seja uma matriz válida teremos valores para exibir
+				if(valida)//Caso seja uma matriz valida teremos valores para exibir
 					for (int i = 0; i < mat.getLin(); i++)
 						System.out.println("   " + (char) (i + 97) + " vale: " + mat.getMatriz()[i][mat.getLin()]);
-				else //Caso não, exibimos a menssagem nescessária para situação
+				else //Caso nao, exibimos a menssagem nescessaria para situacao
 				    System.out.println("   Esse sistema nao tem solucao!");
 
-				//Caso o usuário queira ler mais sistemas no arquivo ele poderera escolher
+				//Caso o usuario queira ler mais sistemas no arquivo ele poderera escolher
 				//entre ler mais um ou sair do programa
 				System.out.println();
 				System.out.println("Deseja calcular mais um sistema?");
@@ -102,21 +102,21 @@ public class Programa {
 				{
 					try
 					{
-						opcao = Teclado.getUmByte(); //Obtêm a opção do usuário
-						if (opcao != 0 && opcao != 1) //Verifica se a opção está dentro das opções válidas
+						opcao = Teclado.getUmByte(); //Obtem a opcao do usuario
+						if (opcao != 0 && opcao != 1) //Verifica se a opcao esta dentro das opcoes validas
 							throw new Exception();
 						break;
 					}
 					catch (Exception err)
 					{
-						System.out.print("Opcao invalida, digite novamente: "); //Caso a opção não seja válida
-						continue; //Recomença a inserção da opção
+						System.out.print("Opcao invalida, digite novamente: "); //Caso a opcao nao seja valida
+						continue; //Recomenda a insercao da opcao
 					}
 				}
 
-				if (opcao == 0) //Se o usuário deseje recomeçar
+				if (opcao == 0) //Se o usuario deseje recomecar
 					continue; //Voltamos ao inicio do forever
-				else //Caso não
+				else //Caso nao
 					break; //Encerramos o programa
 			}
 
