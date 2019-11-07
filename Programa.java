@@ -94,7 +94,7 @@ public class Programa {
 				//entre ler mais um ou sair do programa
 				System.out.println();
 				System.out.println("Deseja calcular mais um sistema?");
-				System.out.println("Opcoes: 0 para sim || 1 para nao");
+				System.out.println("Opcoes: 0 para nao || 1 para sim");
 				System.out.print("Sua escolha: ");
 
 				byte opcao;
@@ -114,7 +114,7 @@ public class Programa {
 					}
 				}
 
-				if (opcao == 0) //Se o usuario deseje recomecar
+				if (opcao == 1) //Se o usuario deseje recomecar
 					continue; //Voltamos ao inicio do forever
 				else //Caso nao
 					break; //Encerramos o programa
