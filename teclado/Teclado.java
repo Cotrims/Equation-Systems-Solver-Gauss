@@ -2,23 +2,9 @@ package teclado;
 
 import java.io.*;
 
-/**
- * Classe leitora de teclado. Esta singleton lê e retorna valores diretamente do
- * tecado físico do computador
- * 
- * @author Vinicius Cotrim 19040
- * @author Manuela Benassi 19184
- * @since 2019
- */
 public class Teclado {
     protected static BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
 
-    /**
-     * Retorna uma String do teclado. Após a letura do teclado o valor lido é
-     * convertido para String e retornado.
-     * 
-     * @return Uma String linha lida do teclado.
-     */
     public static String getUmString() {
         String ret = null;
 
@@ -30,12 +16,6 @@ public class Teclado {
         return ret;
     }
 
-    /**
-     * Retorna um byte do teclado. Após a letura do teclado o valor lido é
-     * convertido para byte e retornado.
-     * 
-     * @return Um byte lido do teclado.
-     */
     public static byte getUmByte() throws Exception {
         byte ret = (byte) 0;
 
@@ -49,12 +29,6 @@ public class Teclado {
         return ret;
     }
 
-    /**
-     * Retorna um short do teclado. Após a letura do teclado o valor lido é
-     * convertido para short e retornado.
-     * 
-     * @return Um short da linha lida do teclado.
-     */
     public static short getUmShort() throws Exception {
         short ret = (short) 0;
 
@@ -67,13 +41,7 @@ public class Teclado {
 
         return ret;
     }
-
-    /**
-     * Retorna um int do teclado. Após a letura do teclado o valor lido é convertido
-     * para int e retornado.
-     * 
-     * @return Um int da linha lida do teclado.
-     */
+ 
     public static int getUmInt() throws Exception {
         int ret = 0;
 
@@ -87,12 +55,6 @@ public class Teclado {
         return ret;
     }
 
-    /**
-     * Retorna um long do teclado. Após a letura do teclado o valor lido é
-     * convertido para long e retornado.
-     * 
-     * @return Um long da linha lida do teclado.
-     */
     public static long getUmLong() throws Exception {
         long ret = 0L;
 
@@ -106,12 +68,6 @@ public class Teclado {
         return ret;
     }
 
-    /**
-     * Retorna um float do teclado. Após a letura do teclado o valor lido é
-     * convertido para float e retornado.
-     * 
-     * @return Um float da linha lida do teclado.
-     */
     public static float getUmFloat() throws Exception {
         float ret = 0.0F;
 
@@ -125,12 +81,6 @@ public class Teclado {
         return ret;
     }
 
-    /**
-     * Retorna um bouble do teclado. Após a letura do teclado o valor lido é
-     * convertido para double e retornado.
-     * 
-     * @return Um double da linha lida do teclado.
-     */
     public static double getUmDouble() throws Exception {
         double ret = 0.0;
 
@@ -144,12 +94,6 @@ public class Teclado {
         return ret;
     }
 
-    /**
-     * Retorna um char do teclado. Após a letura do teclado o valor lido é
-     * convertido para char e retornado
-     * 
-     * @return Um char da linha lida do teclado.
-     */
     public static char getUmChar() throws Exception {
         char ret = ' ';
 
@@ -169,13 +113,6 @@ public class Teclado {
         return ret;
     }
 
-    /**
-     * Retorna um boolean do teclado. Após a letura do
-     * teclado o valor lido é convertido para booelan
-     * e retornado.
-     * 
-     * @return Um boolena da linha lida do teclado.
-     */
     public static boolean getUmBoolean() throws Exception {
         boolean ret = false;
 
