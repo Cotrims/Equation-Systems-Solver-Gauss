@@ -53,7 +53,7 @@ public class Matriz implements Comparable<Matriz>, Cloneable {
 
     /**
      * Seta o valor do atributo lin em this. Validando para se ela for um tamanho de
-     * linha válido(>0).
+     * linha válido, ou seja, maior que zero.
      * 
      * @param lin Inteiro que corresponde a quantidade de linhas.
      * @throws Exception Caso a linha seja menor ou igual que 0.
@@ -67,7 +67,7 @@ public class Matriz implements Comparable<Matriz>, Cloneable {
 
     /**
      * Seta o valor do atributo col em this. Validando para se ela for um tamanho de
-     * colunas válido(>0).
+     * colunas válido, ou seja, maior que zero.
      * 
      * @param col Inteiro que corresponde a quantidade de colunas.
      * @throws Exception Caso a coluna seja menor ou igaul que 0.
