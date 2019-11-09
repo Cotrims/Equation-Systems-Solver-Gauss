@@ -1,7 +1,3 @@
-import leitorDeArquivo.LeitorDeArquivo;
-import matriz.Matriz;
-import gauss.Gauss;
-
 public class MainTeste {
 	public static void main(String[] args)
 	{

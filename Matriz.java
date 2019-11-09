@@ -1,5 +1,3 @@
-package matriz;
-
 /**
  * Classe que representa a matriz e da acesso seguro a ela, contendo a matriz,
  * sua quantidade de linhas e colunas.
@@ -12,17 +10,17 @@ public class Matriz implements Comparable<Matriz>, Cloneable {
     /**
      * Mantém armazenado a matriz que a classe representará
      */
-    protected double[][] matriz;
+    private double[][] matriz;
 
     /**
      * Mantém armazenado a quantidade de linhas que a matriz da classe possui.
      */
-    protected int lin;
+    private int lin;
 
     /**
      * Mantém armazenado a quantidade de colunas que a matriz da classe possui.
      */
-    protected int col;
+    private int col;
 
     /**
      * Constroi uma nova instância da classe Matriz. Passando como parâmetro a

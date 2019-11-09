@@ -1,4 +1,3 @@
-package gauss;
 /**A classe singleton Gauss resolve o escalonamento de matrizes, trabalhando
  * sempre com uma matriz de numeros double e métodos que representam cada 
  * parte do escalonamento.

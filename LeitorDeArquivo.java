@@ -1,5 +1,3 @@
-package leitorDeArquivo;
-
 import java.util.StringTokenizer;
 import java.io.*;
 
@@ -16,7 +14,7 @@ public class LeitorDeArquivo {
 	 * Um tipo de BufferedReader que será instanciado como um leitor de aquivo de um
 	 * determinado arquivo.
 	 */
-	protected BufferedReader arquivo;
+	private BufferedReader arquivo;
 
 	/**
 	 * Constroi uma nova instância da classe LeitorDeArquivo. Passando então, para

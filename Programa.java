@@ -1,8 +1,3 @@
-import leitorDeArquivo.LeitorDeArquivo;
-import matriz.Matriz;
-import teclado.Teclado;
-import gauss.Gauss;
-
 public class Programa {
 	public static void main(String[] args)
 	{
