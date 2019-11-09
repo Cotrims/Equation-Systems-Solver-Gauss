@@ -213,7 +213,7 @@ public class Matriz implements Comparable<Matriz>, Cloneable {
      * Constroi uma cópia da instância da classe Matriz dada.
      * Passando então um modelo de Matriz, que é uma instancia
      * da classe, para construir a nova instância
-     * @param Modelo um objeto da classe matriz que será usado como modelo
+     * @param modelo um objeto da classe matriz que será usado como modelo
      * @throws Exception Se o modelo passado como parâmetro não existir
      */
     public Matriz(Matriz modelo) throws Exception {

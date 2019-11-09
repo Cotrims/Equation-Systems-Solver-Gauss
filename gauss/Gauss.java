@@ -92,6 +92,7 @@ public class Gauss {
      * @param lin Linha em que iremos implementar o 1.
      * @return Retorna uma matriz de double com a linha (que foi passada como parâmetro)
      * dividida pelas operações do método.
+     * @throws Exception Exceção lançada por métodos secundários
      */
     public static double[][] tornarUm(double[][] matriz, int lin) throws Exception
      {
